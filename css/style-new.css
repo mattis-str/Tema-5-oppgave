@@ -1,0 +1,179 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --base: #252526;
+  --red: #dc143c;
+  --mint: #daffe7;
+  --neon: #d6f31f;
+  --neon-trans: #90a414;
+  --tw-rotate: 180deg;
+}
+
+body {
+  background-color: var(--base);
+  color: var(--black);
+  width: 100%;
+  min-height: 100vh;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  flex-flow: column wrap;
+  align-content: center;
+}
+
+h1 {
+    color: var(--neon-trans);
+    writing-mode: vertical-lr;
+    rotate: var(--tw-rotate);
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 12vh;
+    opacity: 0.5;
+    position: absolute;
+    right: 0;
+    transform: translateX(-17%);
+    z-index: -1;
+    top: 4rem;
+
+    /* remove drag over text */
+      -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+         -khtml-user-select: none; /* Konqueror HTML */
+           -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+  }
+  
+  
+  .list {
+    color: var(--base);
+    z-index: 1;
+    flex-flow: column nowrap;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--neon);
+    border-radius: 2rem;
+    width: 75%;
+    height: 70vh;
+    margin: 3rem;
+    padding: 5rem;
+    position: relative;
+  }
+  
+
+#shopping-list {
+  /* columns: 2; */
+  overflow-y: scroll;
+  height: 50vh;
+  margin-bottom: 1rem;
+}
+
+
+input, ul li button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+ul li button {
+    border-right: solid var(--base) 3px;
+    margin-right: 1rem;
+    padding-right: 1rem;
+}
+
+ul li button img{
+    width: 30px;
+    height: auto;
+}
+
+ul li button:hover {
+opacity: 0.8;
+}
+
+button:active {
+    opacity: 0.6;
+}
+
+li {
+  list-style: none;
+  padding-left: 1rem;
+  margin-bottom: 1.1rem;
+  font-size: 2rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  break-inside: avoid;
+  display: flex;
+  flex-wrap: nowrap;
+  cursor: pointer;
+
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.onClick {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+
+#add-button {
+  background-color: var(--neon);
+  border: solid var(--base) 3px;
+  border-radius: 5rem;
+  padding: 0.3rem;
+  margin-left: 2rem;
+  white-space:nowrap
+}
+
+#add-button:hover {
+    background-color: var(--base);
+    color: var(--neon);
+}
+
+.flex-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+#product {
+  border-bottom: solid var(--base) 3px;
+  width: 20rem;
+}
+
+#product::placeholder {
+    color: var(--base);
+}
+
+
+/* Phone */
+
+@media screen and (max-width: 500px) {
+
+    #product {
+        width: 10rem;
+      }
+
+    #shopping-list {
+        height: 70vh;
+    }
+
+    .list {
+        padding: 1rem 2rem 5rem;
+        width: 90%;
+        height: 80vh;
+        margin: 0;
+    }
+
+    h1 {
+        top: 5rem;
+    }
+    
+}
