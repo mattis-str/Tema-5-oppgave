@@ -24,6 +24,7 @@ function renderList() {
     // line-through
     liElement.addEventListener("click", (event) => {
       liElement.classList.toggle("onClick");
+      updateLocalStorage();
     });
 
     buttonDeleteElement.addEventListener("click", () => {
