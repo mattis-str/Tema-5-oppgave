@@ -4,8 +4,10 @@
   --base: #252526;
   --red: #dc143c;
   --mint: #daffe7;
-  --neon: #d6f31f;
-  --neon-trans: #90a414;
+ /*  --neon: #d6f31f; */
+  --neon: #56dd92;
+  /* --neon-trans: #90a414; */
+  --neon-trans: #2c734c;
   --tw-rotate: 180deg;
 }
 
