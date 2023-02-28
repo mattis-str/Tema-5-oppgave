@@ -4,18 +4,15 @@
   --base: #252526;
   --red: #dc143c;
   --mint: #daffe7;
- /*  --neon: #d6f31f; */
-  --neon: #56dd92;
-  /* --neon-trans: #90a414; */
-  --neon-trans: #2c734c;
+  --neon: #d6f31f;
+  /* --neon: #56dd92; */
+  --neon-trans: #90a414;
+  --base-trans: #25252699;
   --tw-rotate: 180deg;
 }
 
 body {
   background-color: var(--base);
-  color: var(--black);
-  width: 100%;
-  min-height: 100vh;
 }
 
 #container {
@@ -27,17 +24,18 @@ body {
 }
 
 h1 {
-    color: var(--neon-trans);
+    color: var(--base);
     writing-mode: vertical-lr;
     rotate: var(--tw-rotate);
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: 12vh;
-    opacity: 0.5;
+    font-size: 15.5vh;
+/*     opacity: 0.5; */
     position: absolute;
     right: 0;
-    transform: translateX(-17%);
+    top: -1rem;
+    transform: translateX(-21%);
     z-index: -1;
-    top: 4rem;
+    
 
     /* remove drag over text */
       -webkit-touch-callout: none; /* iOS Safari */
@@ -52,16 +50,16 @@ h1 {
   .list {
     color: var(--base);
     z-index: 1;
-    flex-flow: column nowrap;
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--neon);
+   /*  background-color: var(--neon); */
     border-radius: 2rem;
     width: 75%;
     height: 70vh;
-    margin: 3rem;
     padding: 5rem;
     position: relative;
+
+    /* clip-path: inset(0 0 0 0 round 2rem); */
+    background: linear-gradient(270deg, rgba(214,243,31,1), rgb(61 60 56 / 59%)),
+    url(../assets/grain.svg);;
   }
   
 
@@ -70,13 +68,13 @@ h1 {
   overflow-y: scroll;
   height: 50vh;
   margin-bottom: 1rem;
+  width: 95%;
+  line-break: anywhere;
 }
 
 
 input, ul li button {
-  appearance: none;
   border: none;
-  outline: none;
   background: none;
 }
 
@@ -126,23 +124,26 @@ li {
 
 
 #add-button {
-  background-color: var(--neon);
-  border: solid var(--base) 3px;
+  background-color: var(--base);
+  color: var(--neon);
+  border: none;
   border-radius: 5rem;
-  padding: 0.3rem;
+  padding: 0.5rem;
   margin-left: 2rem;
   white-space:nowrap
 }
 
 #add-button:hover {
-    background-color: var(--base);
-    color: var(--neon);
+    opacity: 0.9;
+}
+
+#add-button:active {
+  opacity: 0.8;
 }
 
 .flex-item {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 #product {
@@ -167,15 +168,26 @@ li {
         height: 70vh;
     }
 
+
+    #add-button:hover, :active {
+      opacity: 1;
+    }
+
+
     .list {
         padding: 3rem 2rem;
         width: 90%;
         height: 85%;
         margin: 0;
+        clip-path: inset(0 0 0 0 round 2rem);
     }
 
+
     h1 {
-        top: 5rem;
+        top: 4rem;
+        opacity: 0.6;
+        color: var(--neon-trans);
+        
     }
     
 }
