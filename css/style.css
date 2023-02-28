@@ -58,7 +58,7 @@ h1 {
     position: relative;
 
     /* clip-path: inset(0 0 0 0 round 2rem); */
-    background: linear-gradient(270deg, rgba(214,243,31,1), rgb(61 60 56 / 59%)),
+    background: linear-gradient(270deg, rgba(214,243,31,1), rgb(143 37 159 / 70%)),
     url(../assets/grain.svg);;
   }
   
@@ -123,21 +123,27 @@ li {
 }
 
 
-#add-button {
+.add-button {
   background-color: var(--base);
   color: var(--neon);
   border: none;
   border-radius: 5rem;
   padding: 0.5rem;
   margin-left: 2rem;
-  white-space:nowrap
+  white-space: nowrap;
+  cursor: pointer;
 }
 
-#add-button:hover {
+.button-text {
+  color: white;
+  mix-blend-mode: darken;
+} 
+
+.add-button:hover {
     opacity: 0.9;
 }
 
-#add-button:active {
+.add-button:active {
   opacity: 0.8;
 }
 
@@ -169,7 +175,7 @@ li {
     }
 
 
-    #add-button:hover, :active {
+    .add-button:hover, :active {
       opacity: 1;
     }
 

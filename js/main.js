@@ -1,5 +1,5 @@
 const inputElement = document.getElementById("product");
-const buttonAddElement = document.getElementById("add-button");
+const buttonAddElement = document.querySelector(".add-button");
 const ulShoppingListElement = document.getElementById("shopping-list");
 
 buttonAddElement.addEventListener("click", renderList);
