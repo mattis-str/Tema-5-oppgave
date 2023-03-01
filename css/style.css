@@ -1,10 +1,8 @@
 :root {
   --white: #ffffff;
-  --black: #000000;
   --base: #252526;
   --neon: #d6f31f;
   --neon-trans: #90a414;
-  --base-trans: #25252699;
   --tw-rotate: 180deg;
 }
 
@@ -16,7 +14,7 @@ body {
   display: flex;
   justify-content: center;
   height: 100vh;
-  flex-flow: column wrap;
+  flex-flow: wrap;
   align-content: center;
 }
 
@@ -112,7 +110,7 @@ li {
   border: none;
   border-radius: 5rem;
   padding: 0.5rem;
-  margin-left: 2rem;
+  margin: 0 2rem;
   white-space: nowrap;
   cursor: pointer;
 }
@@ -146,7 +144,7 @@ li {
 
 /* Phone */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   #product {
     width: 10rem;
   }
