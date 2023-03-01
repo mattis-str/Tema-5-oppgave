@@ -2,10 +2,7 @@
   --white: #ffffff;
   --black: #000000;
   --base: #252526;
-  --red: #dc143c;
-  --mint: #daffe7;
   --neon: #d6f31f;
-  /* --neon: #56dd92; */
   --neon-trans: #90a414;
   --base-trans: #25252699;
   --tw-rotate: 180deg;
@@ -24,47 +21,35 @@ body {
 }
 
 h1 {
-    color: var(--base);
-    writing-mode: vertical-lr;
-    rotate: var(--tw-rotate);
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: 15.5vh;
-/*     opacity: 0.5; */
-    position: absolute;
-    right: 0;
-    top: -1rem;
-    transform: translateX(-21%);
-    z-index: -1;
-    
+  color: var(--base);
+  writing-mode: vertical-lr;
+  rotate: var(--tw-rotate);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 15.5vh;
+  position: absolute;
+  right: 0;
+  top: -1rem;
+  transform: translateX(-21%);
+  z-index: -1;
+}
 
-    /* remove drag over text */
-      -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-         -khtml-user-select: none; /* Konqueror HTML */
-           -moz-user-select: none; /* Old versions of Firefox */
-            -ms-user-select: none; /* Internet Explorer/Edge */
-                user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
-  }
-  
-  
-  .list {
-    color: var(--base);
-    z-index: 1;
-   /*  background-color: var(--neon); */
-    border-radius: 2rem;
-    width: 75%;
-    height: 70vh;
-    padding: 5rem;
-    position: relative;
+.list {
+  color: var(--base);
+  z-index: 1;
+  border-radius: 2rem;
+  width: 75%;
+  height: 70vh;
+  padding: 5rem;
+  position: relative;
 
-    /* clip-path: inset(0 0 0 0 round 2rem); */
-    background: linear-gradient(270deg, rgba(214,243,31,1), rgb(143 37 159 / 70%)),
-    url(../assets/grain.svg);;
-  }
-  
+  background: linear-gradient(
+      270deg,
+      rgba(214, 243, 31, 1),
+      rgb(143 37 159 / 70%)),
+    url(../assets/grain.svg);
+}
 
 #shopping-list {
-  /* columns: 2; */
   overflow-y: scroll;
   height: 50vh;
   margin-bottom: 1rem;
@@ -72,29 +57,29 @@ h1 {
   line-break: anywhere;
 }
 
-
-input, ul li button {
+input,
+ul li button {
   border: none;
   background: none;
 }
 
 ul li button {
-    border-right: solid var(--base) 3px;
-    margin-right: 1rem;
-    padding-right: 1rem;
+  border-right: solid var(--base) 3px;
+  margin-right: 1rem;
+  padding-right: 1rem;
 }
 
-ul li button img{
-    width: 30px;
-    height: auto;
+ul li button img {
+  width: 30px;
+  height: auto;
 }
 
 ul li button:hover {
-opacity: 0.8;
+  opacity: 0.8;
 }
 
 button:active {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 li {
@@ -107,21 +92,12 @@ li {
   display: flex;
   flex-wrap: nowrap;
   cursor: pointer;
-
-
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
 .onClick {
-    opacity: 0.5;
-    text-decoration: line-through;
+  opacity: 0.5;
+  text-decoration: line-through;
 }
-
 
 .add-button {
   background-color: var(--base);
@@ -135,12 +111,12 @@ li {
 }
 
 .button-text {
-  color: white;
+  color: var(--white);
   mix-blend-mode: darken;
-} 
+}
 
 .add-button:hover {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
 .add-button:active {
@@ -148,8 +124,8 @@ li {
 }
 
 .flex-item {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 
 #product {
@@ -158,42 +134,37 @@ li {
 }
 
 #product::placeholder {
-    color: var(--base);
+  color: var(--base);
 }
-
 
 /* Phone */
 
 @media screen and (max-width: 500px) {
+  #product {
+    width: 10rem;
+  }
 
-    #product {
-        width: 10rem;
-      }
+  #shopping-list {
+    height: 70vh;
+  }
 
-    #shopping-list {
-        height: 70vh;
-    }
+  .add-button:hover,
+  :active {
+    opacity: 1;
+  }
 
+  .list {
+    padding: 3rem 2rem;
+    width: 90%;
+    height: 85%;
+    margin: 0;
+    clip-path: inset(0 0 0 0 round 2rem);
+  }
 
-    .add-button:hover, :active {
-      opacity: 1;
-    }
-
-
-    .list {
-        padding: 3rem 2rem;
-        width: 90%;
-        height: 85%;
-        margin: 0;
-        clip-path: inset(0 0 0 0 round 2rem);
-    }
-
-
-    h1 {
-        top: 4rem;
-        opacity: 0.6;
-        color: var(--neon-trans);
-        
-    }
-    
+  h1 {
+    display: none;
+    top: 4rem;
+    opacity: 0.6;
+    color: var(--neon-trans);
+  }
 }
