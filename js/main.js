@@ -1,4 +1,6 @@
-const inputElement = document.getElementById("product");
+function init() {
+
+const inputProduct = document.getElementById("product");
 const buttonAddElement = document.querySelector(".add-button");
 const ulShoppingListElement = document.getElementById("shopping-list");
 
@@ -10,9 +12,9 @@ window.addEventListener("keyup", (event) => {
 });
 
 function renderList() {
-  if (inputElement.value !== "") {
+  if (inputProduct.value !== "") {
     const liElement = document.createElement("li");
-    liElement.textContent = inputElement.value;
+    liElement.textContent = inputProduct.value;
     const buttonDeleteElement = document.createElement("button");
     const buttonDeleteElementImg = document.createElement("img");
     buttonDeleteElementImg.setAttribute("src", "./assets/delete.svg");
@@ -34,7 +36,7 @@ function renderList() {
 
     ulShoppingListElement.appendChild(liElement);
 
-    inputElement.value = "";
+    inputProduct.value = "";
 
     updateLocalStorage();
   };
@@ -91,3 +93,6 @@ function loadShoppingList() {
 };
 
 loadShoppingList();
+
+}
+init();
